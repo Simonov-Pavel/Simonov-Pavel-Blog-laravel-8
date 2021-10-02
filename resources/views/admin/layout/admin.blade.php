@@ -9,15 +9,15 @@
 	<!-- Google Font: Source Sans Pro -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
 	<!-- Ionicons -->
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<!-- Theme style -->
-	<link rel="stylesheet" href="dist/css/adminlte.min.css">
+	<link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
 	<!-- overlayScrollbars -->
-	<link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+	<link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 	<!-- Daterange picker -->
-	<link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -25,7 +25,7 @@
 
 		<!-- Preloader -->
 		<div class="preloader flex-column justify-content-center align-items-center">
-			<img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+			<img class="animation__shake" src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
 		</div>
 
 		<nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -40,7 +40,7 @@
 		@yield('content')
 
 		<footer class="main-footer">
-			<strong>Copyright &copy; 2014-2021 <a href="/">Blog Laravel-8</a></strong>
+			<strong>Copyright &copy; 2014-2021 <a href="{{ route('home') }}">Blog Laravel-8</a></strong>
 		</footer>
 
 		<aside class="control-sidebar control-sidebar-dark">
@@ -51,15 +51,15 @@
 	<!-- ./wrapper -->
 
 	<!-- jQuery -->
-	<script src="plugins/jquery/jquery.min.js"></script>
-	<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+	<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+	<script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 	<script>
 		$.widget.bridge('uibutton', $.ui.button)
 	</script>
-	<script src="plugins/moment/moment.min.js"></script>
-	<script src="plugins/daterangepicker/daterangepicker.js"></script>
-	<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-	<script src="dist/js/adminlte.js"></script>
+	<script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
+	<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
+	<script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+	<script src="{{ asset('dist/js/adminlte.js') }}"></script>
 
 </body>
 
