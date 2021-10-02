@@ -21,14 +21,18 @@
 
 	<section class="content">
 		<div class="container-fluid">
-			<div class="col-md-6">
-				<form action="" method="post">
+			<div class="col-6">
+				<form action="{{ route('admin.categories.store') }}" method="post">
 					@csrf
 					<div class="form-group">
 						<label>Название категории</label>
-						<input type="text" class="form-control" name="title" placeholder="Введите название категории">
+						<input type="text" class="form-control" name="title" placeholder="Введите название категории" required>
+						@error('title')
+						<div class="text-danger">Это поле обязательно для заполнения</div>
+						@enderror
+
 					</div>
-					<button type="submit" class="btn btn-primary">Добавить</button>
+					<input type="submit" class="btn btn-primary" value="Добавить">
 				</form>
 			</div>
 		</div>
