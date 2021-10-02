@@ -15,9 +15,9 @@
 					</ol>
 				</div>
 			</div>
-			<div class="col-sm-6">
-				<a href="" class="btn btn-primary">Добавить</a>
-			</div>
+		</div>
+		<div class="col-md-6">
+			<a href="{{ route('admin.categories.create') }}" class="btn btn-primary">Добавить категорию</a>
 		</div>
 	</div>
 
