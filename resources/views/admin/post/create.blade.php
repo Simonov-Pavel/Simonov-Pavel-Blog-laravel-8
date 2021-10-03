@@ -26,13 +26,13 @@
 					@csrf
 					<div class="form-group" class="col-6">
 						<label>Название поста</label>
-						<input type="text" class="form-control" name="title" placeholder="Введите название поста" required>
+						<input type="text" class="form-control" name="title" value="{{ old('title') }}" placeholder="Введите название поста" required>
 						@error('title')
 						<div class="text-danger">{{$message}}</div>
 						@enderror
 					</div>
 					<div class="form-group">
-						<textarea id="summernote" name="content"></textarea>
+						<textarea id="summernote" name="content">{{ old('content') }}</textarea>
 						@error('content')
 						<div class="text-danger">{{$message}}</div>
 						@enderror
