@@ -47,7 +47,12 @@
 											<a href="{{ route('admin.categories.edit', $category->id) }}" class="text-success" title="Редактировать"><i class="fas fa-pencil-alt"></i></a>
 										</td>
 										<td class="text-center">
-											<a href="" class="text-danger" title="Удалить"><i class="fas fa-times"></i></a>
+											<form action="{{ route('admin.categories.delete', $category->id) }}" method="post">
+												@csrf
+												@method('DELETE')
+												<button type="submit" class="border-0 bg-transparent"><i class="fas fa-times text-danger"></i></button>
+											</form>
+
 										</td>
 									</tr>
 									@endforeach

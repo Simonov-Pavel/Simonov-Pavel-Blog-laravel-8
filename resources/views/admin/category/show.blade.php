@@ -8,7 +8,11 @@
 				<div class="col-sm-6 d-flex align-items-center">
 					<h1 class="m-0 mr-2">{{ $category->title }}</h1>
 					<a href="{{ route('admin.categories.edit', $category->id) }}" class="text-success mr-2" title="Редактировать"><i class="fas fa-pencil-alt"></i></a>
-					<a href="" class="text-danger mr-2" title="Удалить"><i class="fas fa-times"></i></a>
+					<form action="{{ route('admin.categories.delete', $category->id) }}" method="post">
+						@csrf
+						@method('DELETE')
+						<button type="submit" class="border-0 bg-transparent"><i class="fas fa-trash-alt text-danger"></i></button>
+					</form>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Main\IndexController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +19,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 		Route::post('/', 'StoreController')->name('admin.categories.store');
 		Route::get('/{category}/show', 'ShowController')->name('admin.categories.show');
 		Route::get('/{category}/edit', 'EditController')->name('admin.categories.edit');
-		Route::patch('/{category}/update', 'UpdateController')->name('admin.categories.update');
+		Route::patch('/{category}', 'UpdateController')->name('admin.categories.update');
+		Route::delete('/{category}', 'DeleteController')->name('admin.categories.delete');
 	});
 });
 
