@@ -21,16 +21,21 @@
 
 	<section class="content">
 		<div class="container-fluid">
-			<div class="col-6">
+			<div>
 				<form action="{{ route('admin.posts.store') }}" method="post">
 					@csrf
-					<div class="form-group">
+					<div class="form-group" class="col-6">
 						<label>Название поста</label>
 						<input type="text" class="form-control" name="title" placeholder="Введите название поста" required>
 						@error('title')
 						<div class="text-danger">{{$message}}</div>
 						@enderror
-
+					</div>
+					<div class="form-group">
+						<textarea id="summernote" name="content"></textarea>
+						@error('content')
+						<div class="text-danger">{{$message}}</div>
+						@enderror
 					</div>
 					<input type="submit" class="btn btn-primary" value="Добавить">
 				</form>
