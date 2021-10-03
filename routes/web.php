@@ -19,6 +19,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 		Route::post('/', 'StoreController')->name('admin.categories.store');
 		Route::get('/{category}/show', 'ShowController')->name('admin.categories.show');
 		Route::get('/{category}/edit', 'EditController')->name('admin.categories.edit');
+		Route::patch('/{category}/update', 'UpdateController')->name('admin.categories.update');
 	});
 });
 
