@@ -47,6 +47,9 @@
 							<div class="input-group-append">
 								<span class="input-group-text">Загрузка</span>
 							</div>
+							@error('preview_img')
+							<div class="text-danger">{{$message}}</div>
+							@enderror
 						</div>
 					</div>
 					<div class="form-group">
@@ -59,23 +62,32 @@
 							<div class="input-group-append">
 								<span class="input-group-text">Загрузка</span>
 							</div>
+							@error('main_img')
+							<div class="text-danger">{{$message}}</div>
+							@enderror
 						</div>
 					</div>
 					<div class="form-group col-6">
 						<label>Выберете категорию</label>
 						<select class="form-control" name="category_id">
 							@foreach($categories as $category)
-							<option value="{{ $category->id }}">{{$category->title}}</option>
+							<option value="{{ $category->id }}" {{$category->id == old('category_id') ? ' selected':''}}>{{$category->title}}</option>
 							@endforeach
 						</select>
+						@error('category_id')
+						<div class="text-danger">{{$message}}</div>
+						@enderror
 					</div>
 					<div class="form-group">
 						<label>Выберете тэги</label>
 						<select class="select2" name="tag_ids[]" multiple="multiple" data-placeholder="Выберете тэги" style="width: 100%;">
 							@foreach($tags as $tag)
-							<option value="{{ $tag->id }}">{{$tag->title}}</option>
+							<option {{ is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? ' selected' : ''}} value="{{ $tag->id }}">{{$tag->title}}</option>
 							@endforeach
 						</select>
+						@error('tag_ids')
+						<div class="text-danger">{{$message}}</div>
+						@enderror
 					</div>
 					<input type="submit" class="btn btn-primary mb-3" value="Добавить">
 				</form>
