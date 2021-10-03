@@ -61,6 +61,14 @@
 							</div>
 						</div>
 					</div>
+					<div class="form-group col-6">
+						<label>Выберете категорию</label>
+						<select class="form-control" name="category_id">
+							@foreach($categories as $category)
+							<option value="{{ $category->id }}">{{$category->title}}</option>
+							@endforeach
+						</select>
+					</div>
 					<input type="submit" class="btn btn-primary" value="Добавить">
 				</form>
 			</div>
