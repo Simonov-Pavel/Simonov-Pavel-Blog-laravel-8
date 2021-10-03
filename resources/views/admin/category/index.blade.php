@@ -24,7 +24,7 @@
 	<section class="content">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-6">
+				<div class="col-8">
 					<div class="card">
 						<div class="card-body table-responsive p-0">
 							<table class="table table-hover text-nowrap">
@@ -40,14 +40,14 @@
 									<tr>
 										<td>{{$category->id}}</td>
 										<td>{{$category->title}}</td>
-										<td>
-											<a href=""><i class="far fa-eye"></i></a>
+										<td class="text-center">
+											<a href="{{ route('admin.categories.show', $category->id) }}" title="Смотреть"><i class="far fa-eye"></i></a>
 										</td>
-										<td>
-											<a href="" class="text-success"><i class="fas fa-pencil-alt"></i></a>
+										<td class="text-center">
+											<a href="{{ route('admin.categories.edit', $category->id) }}" class="text-success" title="Редактировать"><i class="fas fa-pencil-alt"></i></a>
 										</td>
-										<td>
-											<a href="" class="text-danger"><i class="fas fa-times"></i></a>
+										<td class="text-center">
+											<a href="" class="text-danger" title="Удалить"><i class="fas fa-times"></i></a>
 										</td>
 									</tr>
 									@endforeach
