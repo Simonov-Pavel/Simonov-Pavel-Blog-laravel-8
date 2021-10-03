@@ -28,9 +28,11 @@
 					<div class="form-group">
 						<label>Название категории</label>
 						<input type="text" class="form-control" name="title" placeholder="Введите название категории" value="{{$category->title}}" required>
-						@error('title')
+
+						@error('title:require')
 						<div class="text-danger">Это поле обязательно для заполнения</div>
 						@enderror
+
 
 					</div>
 					<input type="submit" class="btn btn-primary" value="Обновить">

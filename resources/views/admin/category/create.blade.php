@@ -28,7 +28,7 @@
 						<label>Название категории</label>
 						<input type="text" class="form-control" name="title" placeholder="Введите название категории" required>
 						@error('title')
-						<div class="text-danger">Это поле обязательно для заполнения</div>
+						<div class="text-danger">{{$message}}</div>
 						@enderror
 
 					</div>
