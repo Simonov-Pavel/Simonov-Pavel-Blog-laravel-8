@@ -22,11 +22,11 @@
 	<section class="content">
 		<div class="container-fluid">
 			<div>
-				<form action="{{ route('admin.posts.store') }}" method="post">
+				<form action="{{ route('admin.posts.store') }}" method="post" enctype="multipart/form-data">
 					@csrf
-					<div class="form-group" class="col-6">
+					<div class="form-group">
 						<label>Название поста</label>
-						<input type="text" class="form-control" name="title" value="{{ old('title') }}" placeholder="Введите название поста" required>
+						<input type="text" class="form-control col-6" name="title" value="{{ old('title') }}" placeholder="Введите название поста" required>
 						@error('title')
 						<div class="text-danger">{{$message}}</div>
 						@enderror
@@ -36,6 +36,30 @@
 						@error('content')
 						<div class="text-danger">{{$message}}</div>
 						@enderror
+					</div>
+					<div class="form-group">
+						<label for="exampleInputFile">Превью изображение</label>
+						<div class="input-group col-6">
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" name="preview_img" id="exampleInputFile">
+								<label class="custom-file-label" for="exampleInputFile">Выберете изображение</label>
+							</div>
+							<div class="input-group-append">
+								<span class="input-group-text">Загрузка</span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputFile">Главное изображение поста</label>
+						<div class="input-group col-6">
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" name="main_img" id="exampleInputFile">
+								<label class="custom-file-label" for="exampleInputFile">Выберете изображение</label>
+							</div>
+							<div class="input-group-append">
+								<span class="input-group-text">Загрузка</span>
+							</div>
+						</div>
 					</div>
 					<input type="submit" class="btn btn-primary" value="Добавить">
 				</form>

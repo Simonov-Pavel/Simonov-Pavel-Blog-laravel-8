@@ -56,6 +56,7 @@
 	<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 	<script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 	<script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
+	<script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 	<script>
 		$.widget.bridge('uibutton', $.ui.button)
 	</script>
@@ -76,6 +77,9 @@
 					['para', ['ul', 'ol', 'paragraph']],
 					['height', ['height']]
 				]
+			});
+			$(function() {
+				bsCustomFileInput.init();
 			});
 		})
 	</script>
