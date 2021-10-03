@@ -36,7 +36,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									@foreach($categories as $category)
+									@foreach($tags as $tag)
 									<tr>
 										<td>{{$tag->id}}</td>
 										<td>{{$tag->title}}</td>
