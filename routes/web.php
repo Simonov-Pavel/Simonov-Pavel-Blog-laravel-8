@@ -22,6 +22,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 		Route::patch('/{category}', 'UpdateController')->name('admin.categories.update');
 		Route::delete('/{category}', 'DeleteController')->name('admin.categories.delete');
 	});
+
+	Route::group(['namespace' => 'Tag', 'prefix' => 'tags'], function () {
+		Route::get('/', 'IndexController')->name('admin.tags');
+		Route::get('/create', 'CreateController')->name('admin.tags.create');
+		Route::post('/', 'StoreController')->name('admin.tags.store');
+		Route::get('/{tag}/show', 'ShowController')->name('admin.tags.show');
+		Route::get('/{tag}/edit', 'EditController')->name('admin.tags.edit');
+		Route::patch('/{tag}', 'UpdateController')->name('admin.tags.update');
+		Route::delete('/{tag}', 'DeleteController')->name('admin.tags.delete');
+	});
 });
 
 Route::get('/welcome', function () {
