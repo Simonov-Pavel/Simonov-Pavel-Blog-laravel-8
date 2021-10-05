@@ -24,8 +24,6 @@ class StoreController extends Controller
 		} catch (Exception $exception) {
 			abort(404);
 		}
-
-
 		return redirect()->route('admin.posts');
 	}
 }

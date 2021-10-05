@@ -21,25 +21,28 @@
 
 	<section class="content">
 		<div class="container-fluid">
-			<div class="col-6">
+			<div>
 				<form action="{{ route('admin.posts.update', $post->id) }}" method="post" enctype="multipart/form-data">
 					@csrf
 					@method('PATCH')
 					<div class="form-group">
 						<label>Название поста</label>
-						<input type="text" class="form-control col-6" name="title" value="{{ old('title') }}" placeholder="Введите название поста" required>
+						<input type="text" class="form-control col-6" name="title" value="{{ $post->title }}" placeholder="Введите название поста" required>
 						@error('title')
 						<div class="text-danger">{{$message}}</div>
 						@enderror
 					</div>
 					<div class="form-group">
-						<textarea id="summernote" name="content">{{ old('content') }}</textarea>
+						<textarea id="summernote" name="content">{{ $post->content }}</textarea>
 						@error('content')
 						<div class="text-danger">{{$message}}</div>
 						@enderror
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFile">Превью изображение</label>
+						<div class="w-50">
+							<img src="{{ asset('$post->preview_img') }}" alt="preview_img">
+						</div>
 						<div class="input-group col-6">
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" name="preview_img" id="exampleInputFile">
