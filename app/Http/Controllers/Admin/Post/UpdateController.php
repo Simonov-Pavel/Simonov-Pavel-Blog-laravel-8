@@ -22,7 +22,7 @@ class UpdateController extends Controller
 		}
 		$post->update($data);
 		$post->tags()->sync($tagIds);
-
-		return view('admin.post.show', compact('post'));
+		$posts = Post::all();
+		return view('admin.post.index', compact('posts'));
 	}
 }
