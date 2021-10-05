@@ -40,8 +40,8 @@
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFile">Превью изображение</label>
-						<div class="w-50">
-							<img src="{{ asset('$post->preview_img') }}" alt="preview_img">
+						<div class="w-25">
+							<img src="{{ url('storage/'. $post->preview_img) }}" alt="preview_img" class="w-50 mb-2">
 						</div>
 						<div class="input-group col-6">
 							<div class="custom-file">
@@ -58,6 +58,9 @@
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFile">Главное изображение поста</label>
+						<div class="w-50">
+							<img src="{{ url('storage/'. $post->main_img) }}" alt="main_img" class="w-50 mb-2">
+						</div>
 						<div class="input-group col-6">
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" name="main_img" id="exampleInputFile">
