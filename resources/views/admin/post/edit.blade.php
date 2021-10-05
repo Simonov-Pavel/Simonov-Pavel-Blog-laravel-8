@@ -40,9 +40,11 @@
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFile">Превью изображение</label>
+						@if(isset($post->preview_img))
 						<div class="w-25">
 							<img src="{{ url('storage/'. $post->preview_img) }}" alt="preview_img" class="w-50 mb-2">
 						</div>
+						@endif
 						<div class="input-group col-6">
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" name="preview_img" id="exampleInputFile">
@@ -58,9 +60,11 @@
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFile">Главное изображение поста</label>
+						@if(isset($post->main_img))
 						<div class="w-50">
 							<img src="{{ url('storage/'. $post->main_img) }}" alt="main_img" class="w-50 mb-2">
 						</div>
+						@endif
 						<div class="input-group col-6">
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" name="main_img" id="exampleInputFile">
@@ -78,7 +82,7 @@
 						<label>Выберете категорию</label>
 						<select class="form-control" name="category_id">
 							@foreach($categories as $category)
-							<option value="{{ $category->id }}" {{$category->id == old('category_id') ? ' selected':''}}>{{$category->title}}</option>
+							<option value="{{ $category->id }}" {{ $category->id == $post->category_id ? ' selected':''}}>{{$category->title}}</option>
 							@endforeach
 						</select>
 						@error('category_id')
@@ -96,7 +100,7 @@
 						<div class="text-danger">{{$message}}</div>
 						@enderror
 					</div>
-					<input type="submit" class="btn btn-primary mb-3" value="Добавить">
+					<input type="submit" class="btn btn-primary mb-3" value="Обновить">
 				</form>
 			</div>
 		</div>
