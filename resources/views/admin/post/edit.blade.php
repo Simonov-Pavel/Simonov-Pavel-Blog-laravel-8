@@ -100,6 +100,9 @@
 						<div class="text-danger">{{$message}}</div>
 						@enderror
 					</div>
+					<div class="form-group">
+						<input type="hidden" name="post_id" value="{{ $post->id }}">
+					</div>
 					<input type="submit" class="btn btn-primary mb-3" value="Обновить">
 				</form>
 			</div>
