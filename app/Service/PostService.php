@@ -41,6 +41,7 @@ class PostService
 			}
 			$post->update($data);
 			$post->tags()->sync($tagIds);
+			return $post;
 		} catch (Exception $exception) {
 			abort(404);
 		}
