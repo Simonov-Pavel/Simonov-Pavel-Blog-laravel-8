@@ -34,7 +34,7 @@
 					</div>
 					<div class="form-group">
 						<label>Email</label>
-						<input type="email" class="form-control" name="email" placeholder="Введите почту пользователя" required>
+						<input type="email" class="form-control" name="email" placeholder="Введите почту пользователя" value="{{$user->email}}" required>
 						@error('email')
 						<div class="text-danger">{{$message}}</div>
 						@enderror

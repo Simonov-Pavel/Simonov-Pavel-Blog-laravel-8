@@ -26,14 +26,14 @@
 					@csrf
 					<div class="form-group">
 						<label>Имя</label>
-						<input type="text" class="form-control" name="title" placeholder="Введите имя пользователя" required>
+						<input type="text" class="form-control" value="{{ old('name') }}" name="name" placeholder="Введите имя пользователя" required>
 						@error('title')
 						<div class="text-danger">{{$message}}</div>
 						@enderror
 					</div>
 					<div class="form-group">
 						<label>Email</label>
-						<input type="email" class="form-control" name="email" placeholder="Введите почту пользователя" required>
+						<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Введите почту пользователя" required>
 						@error('email')
 						<div class="text-danger">{{$message}}</div>
 						@enderror

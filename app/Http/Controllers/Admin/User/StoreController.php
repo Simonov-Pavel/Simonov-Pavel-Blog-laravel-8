@@ -13,6 +13,6 @@ class StoreController extends Controller
 		$data = $request->validated();
 		User::firstOrCreate($data);
 
-		return redirect()->route('admin.user');
+		return redirect()->route('admin.users');
 	}
 }
