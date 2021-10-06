@@ -31,6 +31,7 @@
 						<div class="text-danger">{{$message}}</div>
 						@enderror
 					</div>
+
 					<div class="form-group">
 						<textarea id="summernote" name="content">{{ old('content') }}</textarea>
 						@error('content')
