@@ -32,6 +32,7 @@
 									<tr>
 										<th>ID</th>
 										<th>Имя</th>
+										<th>Email</th>
 										<th colspan="3" class="text-center">Деиствие</th>
 									</tr>
 								</thead>
@@ -40,6 +41,7 @@
 									<tr>
 										<td>{{$user->id}}</td>
 										<td>{{$user->name}}</td>
+										<td>{{$user->email}}</td>
 										<td class="text-center">
 											<a href="{{ route('admin.users.show', $user->id) }}" title="Смотреть"><i class="far fa-eye"></i></a>
 										</td>
