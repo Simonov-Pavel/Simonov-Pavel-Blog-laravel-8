@@ -30,7 +30,20 @@
 						@error('title')
 						<div class="text-danger">{{$message}}</div>
 						@enderror
-
+					</div>
+					<div class="form-group">
+						<label>Email</label>
+						<input type="email" class="form-control" name="email" placeholder="Введите почту пользователя" required>
+						@error('email')
+						<div class="text-danger">{{$message}}</div>
+						@enderror
+					</div>
+					<div class="form-group">
+						<label>Пароль</label>
+						<input type="password" class="form-control" name="password" placeholder="Введите пароль пользователя" required>
+						@error('password')
+						<div class="text-danger">{{$message}}</div>
+						@enderror
 					</div>
 					<input type="submit" class="btn btn-primary" value="Добавить">
 				</form>
