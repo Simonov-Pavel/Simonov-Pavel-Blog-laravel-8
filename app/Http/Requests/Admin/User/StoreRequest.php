@@ -43,6 +43,8 @@ class StoreRequest extends FormRequest
 			'password.required' => 'Это поле обязательно для заполнения',
 			'password.string' => 'Это поле обязательно должно быть строкой',
 			'password.min' => 'Пароль должен быть не менее 6 символов',
+			'role.required' => 'Это поле обязательно для заполнения',
+			'role.integer' => 'Не верный формат',
 		];
 	}
 }
