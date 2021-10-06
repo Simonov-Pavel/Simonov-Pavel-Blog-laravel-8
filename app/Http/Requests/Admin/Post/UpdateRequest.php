@@ -23,14 +23,16 @@ class UpdateRequest extends FormRequest
 	 */
 	public function rules()
 	{
+
 		return [
-			'title' => 'required|string|unique:posts',
+			'title' => 'required|string|unique:posts,title,' . $this->post_id,
 			'content' => 'required|string',
 			'preview_img' => 'nullable|file',
 			'main_img' => 'nullable|file',
 			'category_id' => 'required|integer|exists:categories,id',
 			'tag_ids' => 'nullable|array',
 			'tag_ids.*' => 'nullable|integer|exists:tags,id',
+			'post_id' => 'required|integer|exists:posts,id',
 		];
 	}
 

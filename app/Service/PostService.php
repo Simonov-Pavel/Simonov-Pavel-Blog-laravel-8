@@ -36,6 +36,7 @@ class PostService
 	{
 		try {
 			DB::beginTransaction();
+			unset($data['post_id']);
 			if (isset($data['tag_ids'])) {
 				$tagIds = $data['tag_ids'];
 				unset($data['tag_ids']);
