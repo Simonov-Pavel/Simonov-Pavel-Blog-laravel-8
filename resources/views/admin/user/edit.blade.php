@@ -39,6 +39,17 @@
 						<div class="text-danger">{{$message}}</div>
 						@enderror
 					</div>
+					<div class="form-group col-6">
+						<label>Выберете роль пользователя</label>
+						<select class="form-control" name="role">
+							@foreach($roles as $id=>$role)
+							<option value="{{ $id }}" {{$id == $user->role ? ' selected':''}}>{{$role}}</option>
+							@endforeach
+						</select>
+						@error('role')
+						<div class="text-danger">{{$message}}</div>
+						@enderror
+					</div>
 					<div class="form-group">
 						<input type="hidden" name="user_id" value="{{ $user->id }}">
 					</div>
