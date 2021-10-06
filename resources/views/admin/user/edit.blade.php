@@ -11,7 +11,7 @@
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
-						<li class="breadcrumb-item"><a href="{{ route('admin.categories') }}">Пользователи</a></li>
+						<li class="breadcrumb-item"><a href="{{ route('admin.users') }}">Пользователи</a></li>
 						<li class="breadcrumb-item active">Редактировать</li>
 					</ol>
 				</div>
@@ -26,14 +26,18 @@
 					@csrf
 					@method('PATCH')
 					<div class="form-group">
-						<label>Название категории</label>
+						<label>Имя</label>
 						<input type="text" class="form-control" name="name" placeholder="Введите имя пользователя" value="{{$user->name}}" required>
-
-						@error('title')
-						<div class="text-danger">Это поле обязательно для заполнения</div>
+						@error('name')
+						<div class="text-danger">{{$message}}</div>
 						@enderror
-
-
+					</div>
+					<div class="form-group">
+						<label>Email</label>
+						<input type="email" class="form-control" name="email" placeholder="Введите почту пользователя" required>
+						@error('email')
+						<div class="text-danger">{{$message}}</div>
+						@enderror
 					</div>
 					<input type="submit" class="btn btn-primary" value="Обновить">
 				</form>
