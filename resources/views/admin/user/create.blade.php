@@ -33,7 +33,7 @@
 					</div>
 					<div class="form-group">
 						<label>Email</label>
-						<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Введите почту пользователя" required>
+						<input type="email" class="form-control" value="{{ old('email') }}" name="email" placeholder="Введите почту пользователя" required>
 						@error('email')
 						<div class="text-danger">{{$message}}</div>
 						@enderror
@@ -49,7 +49,7 @@
 						<label>Выберете роль пользователя</label>
 						<select class="form-control" name="role">
 							@foreach($roles as $id=>$role)
-							<option value="{{ $id }}" {{$id == old('role_id') ? ' selected':''}}>{{$role}}</option>
+							<option value="{{ $id }}" {{$id == old('role') ? ' selected':''}}>{{$role}}</option>
 							@endforeach
 						</select>
 						@error('role')
