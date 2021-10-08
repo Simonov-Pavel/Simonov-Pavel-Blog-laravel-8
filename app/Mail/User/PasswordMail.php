@@ -9,25 +9,27 @@ use Illuminate\Queue\SerializesModels;
 
 class PasswordMail extends Mailable
 {
-    use Queueable, SerializesModels;
+	use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+	public $password;
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
-    public function build()
-    {
-        return $this->markdown('mail.user.password');
-    }
+	/**
+	 * Create a new message instance.
+	 *
+	 * @return void
+	 */
+	public function __construct($password)
+	{
+		$this->password = $password;
+	}
+
+	/**
+	 * Build the message.
+	 *
+	 * @return $this
+	 */
+	public function build()
+	{
+		return $this->markdown('mail.user.password');
+	}
 }
