@@ -19,14 +19,16 @@ class StoreUserJob implements ShouldQueue
 {
 	use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+	public $data;
+
 	/**
 	 * Create a new job instance.
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct($data)
 	{
-		//
+		$this->data = $data;
 	}
 
 	/**
@@ -37,10 +39,10 @@ class StoreUserJob implements ShouldQueue
 	public function handle()
 	{
 		$password = Str::random(10);
-		$data['password'] = Hash::make($password);
-		$user = User::firstOrCreate(['email' => $data['email']], $data);
+		$this->data['password'] = Hash::make($password);
+		$user = User::firstOrCreate(['email' => $this->data['email']], $this->data);
 
-		Mail::to($data['email'])->send(new PasswordMail($password));
+		Mail::to($this->data['email'])->send(new PasswordMail($password));
 		event(new Registered($user));
 	}
 }
