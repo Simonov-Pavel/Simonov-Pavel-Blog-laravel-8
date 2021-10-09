@@ -50,18 +50,21 @@
 						</li>
 					</ul>
 					<ul class="navbar-nav mt-2 mt-lg-0">
+						@if(auth()->user() == null)
 						<li class="nav-item">
 							<a class="nav-link" href="{{ route('login') }}"> Войти</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="{{ route('register') }}">Регистрация</a>
 						</li>
+						@else
 						<li class="nav-item">
 							<form action="{{ route('logout') }}" method="post">
 								@csrf
 								<input type="submit" class="btn btn-outline-primary" value="Выйти">
 							</form>
 						</li>
+						@endif
 					</ul>
 				</div>
 			</nav>
