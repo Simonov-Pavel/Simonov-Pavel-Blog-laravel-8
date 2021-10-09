@@ -58,12 +58,27 @@
 							<a class="nav-link" href="{{ route('register') }}">Регистрация</a>
 						</li>
 						@else
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Добро пожаловать {{auth()->user()->name}}
+							</a>
+
+							<div class="dropdown-menu" aria-labelledby="pagesDropdown">
+								@if(auth()->user()->role == $admin)
+								<a class="dropdown-item" href="#">Личный кабинет</a>
+								<a class="dropdown-item" href="{{route('admin')}}">Панель управления</a>
+								@else
+								<a class="dropdown-item" href="#">Личный кабинет</a>
+								@endif
+							</div>
+						</li>
 						<li class="nav-item">
 							<form action="{{ route('logout') }}" method="post">
 								@csrf
 								<input type="submit" class="btn btn-outline-primary" value="Выйти">
 							</form>
 						</li>
+
 						@endif
 					</ul>
 				</div>
