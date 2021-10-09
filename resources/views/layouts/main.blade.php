@@ -51,10 +51,10 @@
 					</ul>
 					<ul class="navbar-nav mt-2 mt-lg-0">
 						<li class="nav-item">
-							<a class="nav-link" href="#"><span class="flag-icon flag-icon-squared rounded-circle flag-icon-gb"></span> Eng</a>
+							<a class="nav-link" href="{{ route('login') }}"> Войти</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Download</a>
+							<a class="nav-link" href="{{ route('register') }}">Регистрация</a>
 						</li>
 					</ul>
 				</div>
