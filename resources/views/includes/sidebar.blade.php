@@ -20,8 +20,15 @@
 		<nav class="mt-2">
 			<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 				<li class="nav-item">
+					<a href="{{ route('admin') }}" class="nav-link">
+						<i class="nav-icon fas fa-home"></i>
+						<p>Главная</p>
+					</a>
+				</li>
+
+				<li class="nav-item">
 					<a href="{{ route('admin.users') }}" class="nav-link">
-						<i class="nav-icon fas fa-book-open"></i>
+						<i class="nav-icon ion ion-person-add"></i>
 						<p>Пользователи</p>
 					</a>
 				</li>
