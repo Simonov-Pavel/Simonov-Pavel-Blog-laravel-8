@@ -15,6 +15,7 @@ Route::group(['namespace' => 'Account', 'prefix' => 'account', 'middleware' => [
 
 	Route::group(['namespace' => 'User', 'prefix' => 'edit'], function () {
 		Route::get('/', 'EditController')->name('account-edit');
+		Route::patch('/{user}', 'UpdateController')->name('account.users.update');
 	});
 });
 
