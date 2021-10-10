@@ -33,26 +33,6 @@
 					</a>
 				</li>
 
-				<li class="nav-item">
-					<a href="{{ route('admin.posts') }}" class="nav-link">
-						<i class="nav-icon fas fa-book-open"></i>
-						<p>Посты</p>
-					</a>
-				</li>
-
-				<li class="nav-item">
-					<a href="{{ route('admin.categories') }}" class="nav-link">
-						<i class="nav-icon fas fa-align-justify"></i>
-						<p>Категории</p>
-					</a>
-				</li>
-
-				<li class="nav-item">
-					<a href="{{ route('admin.tags') }}" class="nav-link">
-						<i class="nav-icon fas fa-tags"></i>
-						<p>Тэги</p>
-					</a>
-				</li>
 			</ul>
 		</nav>
 		<!-- /.sidebar-menu -->
