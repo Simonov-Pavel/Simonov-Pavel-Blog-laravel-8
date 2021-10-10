@@ -64,12 +64,13 @@
 							</a>
 
 							<div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+								<a class="dropdown-item" href="{{ route('account') }}">Личный кабинет</a>
 								@if(auth()->user()->role == $admin)
-								<a class="dropdown-item" href="#">Личный кабинет</a>
 								<a class="dropdown-item" href="{{route('admin')}}">Панель управления</a>
-								@else
-								<a class="dropdown-item" href="#">Личный кабинет</a>
 								@endif
+
+
 							</div>
 						</li>
 						<li class="nav-item">
