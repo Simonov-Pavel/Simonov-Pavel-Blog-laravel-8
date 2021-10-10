@@ -54,7 +54,12 @@
 					</div>
 					<div class="form-group">
 						<label>Email</label>
-						<input type="email" class="form-control col-6" name="email" value="{{ $user->email }}" placeholder="Введите свой tmail" required>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+							</div>
+							<input type="email" class="form-control col-6" name="email" value="{{ $user->email }}" placeholder="Введите свой tmail" required>
+						</div>
 						@error('email')
 						<div class="text-danger">{{$message}}</div>
 						@enderror
