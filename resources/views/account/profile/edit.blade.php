@@ -29,7 +29,7 @@
 						<label for="exampleInputFile">Аватар</label>
 
 						<div class="w-25">
-							<img src="{{ url('storage/images/avatar/'. $user->avatar) }}" alt="user-avatar" class="w-50 mb-2">
+							<img src="{{ url('storage/'. $user->avatar) }}" alt="user-avatar" class="w-50 mb-2">
 						</div>
 
 						<div class="input-group col-6">
