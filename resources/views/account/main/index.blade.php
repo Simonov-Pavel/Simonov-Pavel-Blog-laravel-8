@@ -32,7 +32,7 @@
 					</li>
 					@endif
 				</ul>
-				<a href="{{route(account-edit)}}" class="btn btn-primary btn-block my-3"><b>Редактировать профиль</b></a>
+				<a href="{{route('account-edit')}}" class="btn btn-primary btn-block my-3"><b>Редактировать профиль</b></a>
 			</div>
 			<!-- /.box-body -->
 		</div>

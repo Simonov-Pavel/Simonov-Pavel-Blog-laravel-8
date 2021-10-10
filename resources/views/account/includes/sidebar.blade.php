@@ -25,14 +25,7 @@
 						<p>Главная</p>
 					</a>
 				</li>
-				@if(auth()->user()->role == $admin)
-				<li class="nav-item">
-					<a href="{{ route('admin') }}" class="nav-link">
-						<i class="nav-icon fas fa-home"></i>
-						<p>Панель управления</p>
-					</a>
-				</li>
-				@endif
+
 			</ul>
 		</nav>
 		<!-- /.sidebar-menu -->

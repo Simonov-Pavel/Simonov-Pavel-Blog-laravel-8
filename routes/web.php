@@ -11,7 +11,10 @@ Route::group(['namespace' => 'Main'], function () {
 Route::group(['namespace' => 'Account', 'prefix' => 'account', 'middleware' => ['auth', 'verified']], function () {
 	Route::group(['namespace' => 'Main'], function () {
 		Route::get('/', 'IndexController')->name('account');
-		Route::get('/edit', 'EditController')->name('account-edit');
+	});
+
+	Route::group(['namespace' => 'Edit', 'prefix' => 'edit'], function () {
+		Route::get('/', 'EditController')->name('account-edit');
 	});
 });
 
