@@ -13,7 +13,7 @@ Route::group(['namespace' => 'Account', 'prefix' => 'account', 'middleware' => [
 		Route::get('/', 'IndexController')->name('account');
 	});
 
-	Route::group(['namespace' => 'Edit', 'prefix' => 'edit'], function () {
+	Route::group(['namespace' => 'User', 'prefix' => 'edit'], function () {
 		Route::get('/', 'EditController')->name('account-edit');
 	});
 });

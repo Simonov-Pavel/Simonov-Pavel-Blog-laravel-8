@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Account\Edit;
+namespace App\Http\Controllers\Account\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
