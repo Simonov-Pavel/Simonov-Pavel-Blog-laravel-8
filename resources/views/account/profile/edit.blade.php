@@ -69,8 +69,10 @@
 					<div class="form-group">
 						<label>Телефон</label>
 						<div class="input-group">
-							<div class="input-group-addon">
-								<i class="fa fa-phone"></i>
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fa fa-phone"></i>
+								</span>
 							</div>
 							<input type="text" class="form-control col-6" name="tel" value="{{ $user->tel }}" data-inputmask="'mask': '8(999) 999-99-99'" id='data-mask' data-mask="" placeholder="8(999) 999-99-99">
 						</div>
