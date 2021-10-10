@@ -8,6 +8,12 @@ Route::group(['namespace' => 'Main'], function () {
 	Route::get('/', 'IndexController')->name('home');
 });
 
+Route::group(['namespace' => 'Account', 'prefix' => 'account', 'middleware' => ['auth', 'verified']], function () {
+	Route::group(['namespace' => 'Main'], function () {
+		Route::get('/', 'IndexController')->name('admin');
+	});
+});
+
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']], function () {
 	Route::group(['namespace' => 'Main'], function () {
 		Route::get('/', 'IndexController')->name('admin');
