@@ -17,6 +17,14 @@ Route::group(['namespace' => 'Account', 'prefix' => 'account', 'middleware' => [
 		Route::get('/', 'EditController')->name('account-edit');
 		Route::patch('/{user}', 'UpdateController')->name('account.users.update');
 	});
+
+	Route::group(['namespace' => 'Like', 'prefix' => 'likes'], function () {
+		Route::get('/', 'IndexController')->name('account.like');
+	});
+
+	Route::group(['namespace' => 'Comment', 'prefix' => 'comments'], function () {
+		Route::get('/', 'IndexController')->name('account.comment');
+	});
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']], function () {

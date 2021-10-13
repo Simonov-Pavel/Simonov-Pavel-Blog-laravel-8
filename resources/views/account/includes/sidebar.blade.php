@@ -27,14 +27,14 @@
 				</li>
 
 				<li class="nav-item">
-					<a href="#" class="nav-link">
+					<a href="{{ route('account.like') }}" class="nav-link">
 						<i class="nav-icon fas fa-heart"></i>
 						<p>Понравившееся посты</p>
 					</a>
 				</li>
 
 				<li class="nav-item">
-					<a href="#" class="nav-link">
+					<a href="{{ route('account.comment') }}" class="nav-link">
 						<i class="nav-icon fas fa-comment"></i>
 						<p>Комментарии</p>
 					</a>
