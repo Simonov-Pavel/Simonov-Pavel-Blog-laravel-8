@@ -1,13 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Account\Like;
+namespace App\Http\Controllers\Account\Main;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
-class LikeController extends Controller
+class IndexController extends Controller
 {
 	public function __invoke()
 	{
-		return view('account.like.index');
+		$user = auth()->user();
+		return view('account.main.index', compact('user'));
 	}
 }
