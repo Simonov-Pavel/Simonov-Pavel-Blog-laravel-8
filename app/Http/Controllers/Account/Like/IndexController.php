@@ -8,6 +8,7 @@ class IndexController extends Controller
 {
 	public function __invoke()
 	{
-		return view('account.like');
+		$user = auth()->user();
+		return view('account.like.index', compact('user'));
 	}
 }
