@@ -27,6 +27,13 @@
 				</li>
 
 				<li class="nav-item">
+					<a href="{{ route('account') }}" class="nav-link">
+						<i class="nav-icon fas fa-cogs"></i>
+						<p>Профиль</p>
+					</a>
+				</li>
+
+				<li class="nav-item">
 					<a href="{{ route('account.like') }}" class="nav-link">
 						<i class="nav-icon fas fa-heart"></i>
 						<p>Понравившееся посты</p>
