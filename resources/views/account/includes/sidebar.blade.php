@@ -11,7 +11,7 @@
 				<img src="{{ url('storage/'. $user->avatar) }}" class="img-circle elevation-2" alt="User Image">
 			</div>
 			<div class="info">
-				<a href="{{route('account')}}" class="d-block">{{Auth::user()->name}}</a>
+				<a href="{{route('user')}}" class="d-block">{{Auth::user()->name}}</a>
 			</div>
 		</div>
 
