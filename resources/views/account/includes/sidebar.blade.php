@@ -27,7 +27,7 @@
 				</li>
 
 				<li class="nav-item">
-					<a href="{{ route('account') }}" class="nav-link">
+					<a href="{{ route('user') }}" class="nav-link">
 						<i class="nav-icon fas fa-cogs"></i>
 						<p>Профиль</p>
 					</a>
